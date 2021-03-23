@@ -6,6 +6,7 @@
 Certifique-se de que você possui os seguintes serviços/softwares disponíveis no seu computador:
 
 * PHP 7.0+;
+* Composer;
 * Apache;
 * MySQL;
 * Git;
@@ -21,8 +22,24 @@ Após realizar o comando acima, as tabelas serão importadas com êxito no banco
 
 ### Clonando o repositório
 
-
 * Faça o clone desse repositório para uma pasta do seu computador utilizando o `git` com o comando `git clone git@github.com:gustakoch/uniasselvi-cadastro-de-pedidos.git`;
 * Faça uma cópia do arquivo .env.example e renomeie para .env;
 * Configure as variáveis ambiente de conexão ao banco de dados;
-* Rode a aplicação utilizando o comando `php artisan serve` na pasta raíz do projeto;
+* No terminal, digite o comando `composer install` para instalar todas as dependências;
+* Ainda no terminal, digite `php artisan key:generate`. O Laravel necessita de uma chave de registro única para rodar sua aplicação com mais segurança;
+* E por fim, digite no terminal o comando `php artisan serve` para subir o servidor da aplicação. Provavelmente o endereço será algo como `http://localhost:8000`
+* Acesse essa url no seu navegador para iniciar a aplicação;
+
+### Usando a aplicação
+
+Nesta aplicação você pode:
+* Registrar um novo usuário;
+* Fazer login na aplicação;
+* Cadastrar clientes e produtos;
+* Fazer pedidos vinculando 'n' produtos a um determinado cliente;
+* Remover clientes, produtos e pedidos;
+* Listagem de páginas na lista de produtos;
+
+### Obrigado
+
+Qualquer dúvida, estou à disposição.

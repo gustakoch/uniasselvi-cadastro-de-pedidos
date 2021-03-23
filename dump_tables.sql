@@ -19,8 +19,7 @@ CREATE TABLE `pedidos` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
-  KEY `pedidos_FK` (`cliente_id`),
-  CONSTRAINT `pedidos_FK` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`)
+  KEY `pedidos_FK` (`cliente_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `produtos` (
