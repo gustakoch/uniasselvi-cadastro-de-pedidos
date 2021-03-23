@@ -1,0 +1,9 @@
+div#clientes a.btn.success {
+    margin-bottom: 2rem;
+}
+
+#grid-lista-produtos {
+    display: grid;
+    grid-template-columns: 5% 20% 10% 15% 10% 7%;
+    gap: 2rem 1%;
+}

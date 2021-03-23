@@ -1,0 +1,29 @@
+button.add-remove-produto {
+    height: 100%;
+    width: 5rem;
+
+    border: 0;
+    color: var(--white);
+    border-radius: 5px;
+
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: filter 0.3s;
+
+    cursor: pointer;
+}
+
+button.add-remove-produto.add {
+    background: var(--green);
+}
+
+button.add-remove-produto.remove {
+    background: var(--red);
+}
+
+button#mais-produto:hover {
+    filter: brightness(0.9);
+}
+
+.mais-produto-box {
+    margin-top: 1.9rem;
+}

@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    #home table thead, #clientes table thead, #produtos table thead  {
+        display: none;
+    }
+
+    #home table tbody td, #clientes table tbody td, #produtos table tbody td {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #clientes table tbody td, #produtos table tbody td {
+        text-align: left !important;
+    }
+
+    .mais-produto-box {
+        margin-top: 0;
+        height: 4rem;
+    }
+
+
+}
