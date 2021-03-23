@@ -43,9 +43,7 @@ CREATE TABLE `produtos_pedido` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `produtos_pedido_FK` (`pedido_id`),
-  KEY `produtos_pedido_FK_1` (`produto_id`),
-  CONSTRAINT `produtos_pedido_FK` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`id`),
-  CONSTRAINT `produtos_pedido_FK_1` FOREIGN KEY (`produto_id`) REFERENCES `produtos` (`id`)
+  KEY `produtos_pedido_FK_1` (`produto_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `status_pedido` (
