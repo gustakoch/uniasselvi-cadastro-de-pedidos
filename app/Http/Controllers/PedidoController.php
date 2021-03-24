@@ -101,9 +101,13 @@ class PedidoController extends Controller
         $cliente = Cliente::find($pedido->cliente_id);
         $produtos = ProdutoPedido::where('pedido_id', $id)->get();
 
+        $generator = new \Picqer\Barcode\BarcodeGeneratorHTML();
+
         foreach ($produtos as $p) {
             $p->nome_produto = DB::table('produtos')->where('id', $p->produto_id)->value('nome');
             $p->valor_unitario = DB::table('produtos')->where('id', $p->produto_id)->value('valor');
+            $p->numero_codigo_barras = DB::table('produtos')->where('id', $p->produto_id)->value('codigo_barras');
+            $p->codigo_barras = $generator->getBarcode($p->numero_codigo_barras, $generator::TYPE_CODE_128);
         }
 
         $statusPedidos = StatusPedido::all();

@@ -10,18 +10,50 @@
         <form method="POST">
             @csrf
 
-            <div class="form-group">
-                <label for="cliente">Cliente</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    value="{{ $cliente->nome }}"
-                    readonly
-                >
+            <div class="form-row mb-3">
+                <div class="col-sm-2 mb-3">
+                    <label for="cliente">Número</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        value="{{ $pedido->id }}"
+                        readonly
+                    >
+                </div>
+                <div class="col-sm-3 mb-3">
+                    <label for="cliente">Recebido em</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        value="{{ $pedido->created_at->format('d/m/Y') }}"
+                        readonly
+                    >
+                </div>
+            </div>
+
+            <div class="form-row mb-3">
+                <div class="col-sm-8 mb-3">
+                    <label for="cliente">Cliente</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        value="{{ $cliente->nome }}"
+                        readonly
+                    >
+                </div>
+                <div class="col-sm-4">
+                    <label for="cliente">CPF</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        value="{{ $cliente->cpf }}"
+                        readonly
+                    >
+                </div>
             </div>
 
             <div class="form-row">
-                <div class="col-md-4 mb-3">
+                <div class="col-sm-4 mb-3">
                     <label for="produto">Produtos</label>
                     @foreach ($produtos as $produto)
                         <input
@@ -29,10 +61,20 @@
                             class="form-control"
                             value="{{ $produto->nome_produto }}"
                             readonly
-                        >
+                        ><br />
                     @endforeach
                 </div>
-                <div class="col-md-2">
+                <div class="col-sm-3 mb-3">
+                    <label for="codigo_barras">Código de barras</label>
+                    @foreach ($produtos as $produto)
+                        {!! $produto->codigo_barras !!}
+
+                        <div class="barcode mb-2">
+                            {{ $produto->numero_codigo_barras }}
+                        </div>
+                    @endforeach
+                </div>
+                <div class="col-sm-2 mb-3">
                     <label for="valor_unitario">Valor unitário</label>
                     @foreach ($produtos as $produto)
                         <input
@@ -40,21 +82,21 @@
                             class="form-control"
                             type="text"
                             readonly
-                        >
+                        ><br />
                     @endforeach
                 </div>
-                <div class="col-md-2">
-                    <label for="qtde">Informe a quantidade</label>
+                <div class="col-sm-1 mb-3">
+                    <label for="qtde">Qtde</label>
                     @foreach ($produtos as $produto)
                         <input
                             type="text"
                             class="form-control"
                             value="{{ $produto->qtde }}"
                             readonly
-                        >
+                        ><br />
                     @endforeach
                 </div>
-                <div class="col-md-2">
+                <div class="col-sm-2">
                     <label for="total">Total produto</label>
                     @foreach ($produtos as $produto)
                         <input
@@ -62,13 +104,13 @@
                             class="form-control"
                             type="text"
                             readonly
-                        >
+                        ><br />
                     @endforeach
                 </div>
             </div>
 
             <div class="form-row mt-5">
-                <div class="col-md-4">
+                <div class="col-sm-4 mb-3">
                     <label for="status">Status do pedido</label>
                     <select class="form-control" name="status" id="status">
                         @foreach ($status as $s)
@@ -81,7 +123,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-md-2 offset-md-4">
+                <div class="col-sm-2 offset-md-6">
                     <label for="total_pedido">Total do pedido</label>
                     <input
                         value="R$ {{ number_format($pedido->valor_total, 2, ',', '.') }}"

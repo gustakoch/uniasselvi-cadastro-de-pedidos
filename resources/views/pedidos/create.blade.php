@@ -53,7 +53,7 @@
                     <input type="text" class="form-control" id="valor_unitario" value="R$ 0,00" readonly>
                 </div>
                 <div class="col-md-3 mb-3">
-                    <label for="qtde">Informe a quantidade</label>
+                    <label for="qtde">Quantidade</label>
                     <input type="number" class="form-control qtde" value="0" name="qtde[]">
 
                     @if (session('erro_qtde'))
