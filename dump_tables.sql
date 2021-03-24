@@ -54,7 +54,7 @@ CREATE TABLE `status_pedido` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
-INSERT INTO `status_pedido` (descricao,created_at,updated_at) VALUES
+INSERT INTO `status_pedido` (descricao) VALUES
 	 ('Em aberto'),
 	 ('Pago'),
 	 ('Cancelado');
