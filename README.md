@@ -7,7 +7,6 @@ Certifique-se de que você possui os seguintes serviços/softwares disponíveis 
 
 * PHP 7.0+;
 * Composer;
-* Apache;
 * MySQL;
 * Git;
 
