@@ -23,13 +23,13 @@ Após realizar o comando acima, as tabelas serão importadas com êxito no banco
 
 * Faça o clone desse repositório para uma pasta do seu computador utilizando o `git` com o comando `git clone git@github.com:gustakoch/uniasselvi-cadastro-de-pedidos.git`;
 * Faça uma cópia do arquivo .env.example e renomeie para .env;
-* Configure as variáveis ambiente de conexão ao banco de dados;
+* Acesse o arquivo .env e configure as variáveis ambiente de conexão ao banco de dados;
 * No terminal, digite o comando `composer install` para instalar todas as dependências;
 * Ainda no terminal, digite `php artisan key:generate`. O Laravel necessita de uma chave de registro única para rodar sua aplicação com mais segurança;
 * E por fim, digite no terminal o comando `php artisan serve` para subir o servidor da aplicação. Provavelmente o endereço será algo como `http://localhost:8000`
 * Acesse a url gerada no seu navegador, crie um novo usuário e depois faça login.
 
-### Recursos a aplicação
+### Recursos da aplicação
 
 Você pode:
 * Registrar um novo usuário;
