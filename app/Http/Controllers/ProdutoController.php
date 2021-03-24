@@ -32,7 +32,7 @@ class ProdutoController extends Controller
 
         $data = $request->validate([
             'nome' => ['required', 'string', 'max:255'],
-            'codigo_barras' => ['required', 'numeric'],
+            'codigo_barras' => ['required', 'numeric', 'digits:13'],
             'valor' => ['required']
         ]);
 
@@ -50,7 +50,7 @@ class ProdutoController extends Controller
     public function update(Request $request, $id) {
         $data = $request->validate([
             'nome' => ['required', 'string', 'max:255'],
-            'codigo_barras' => ['required', 'numeric'],
+            'codigo_barras' => ['required', 'numeric', 'digits:13'],
             'valor' => ['required']
         ]);
 
