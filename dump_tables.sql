@@ -9,7 +9,7 @@ CREATE TABLE `clientes` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_emails` (`email`),
   UNIQUE KEY `unique_cpf` (`cpf`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `pedidos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -20,7 +20,7 @@ CREATE TABLE `pedidos` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `pedidos_FK` (`cliente_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `produtos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -32,7 +32,7 @@ CREATE TABLE `produtos` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_cod_barras` (`codigo_barras`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `produtos_pedido` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -44,7 +44,7 @@ CREATE TABLE `produtos_pedido` (
   PRIMARY KEY (`id`),
   KEY `produtos_pedido_FK` (`pedido_id`),
   KEY `produtos_pedido_FK_1` (`produto_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `status_pedido` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -54,7 +54,10 @@ CREATE TABLE `status_pedido` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
-INSERT INTO `status_pedido` (descricao) VALUES ('Em aberto'), ('Pago'), ('Cancelado');
+INSERT INTO `status_pedido` (descricao,created_at,updated_at) VALUES
+	 ('Em aberto'),
+	 ('Pago'),
+	 ('Cancelado');
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -65,4 +68,4 @@ CREATE TABLE `usuarios` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
